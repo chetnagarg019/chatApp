@@ -11,7 +11,12 @@ router.post("/add", async (req, res) => {
       return res.status(400).json({ message: "Please fill all the fields" });
     }
 
-    const note = new Notes({ userId, title, content });
+    const note = new Notes({
+    userId: userId,
+    title: title,
+    content: content
+});
+
     await note.save();
 
     res.json({ message: "Notes saved", note });
