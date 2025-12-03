@@ -1,27 +1,8 @@
-// import React from 'react'
-// import AddNote  from './AddNote'
-// import { Link } from "react-router-dom";
 
-// const Home = () => {
-//   return (
-//     <div>
-//       <h1>Hello welcome in my notes-app</h1>
-//       <Link to="/addnote">
-//       <button  className='p-2 px-2 py-1.5 bg-red-500 text-white border-2 cursor-pointer'> 
-//         Add Note
-//       </button>
-//       </Link>
-//     </div>
-//   )
-// }
-
-// export default Home
-
-// //isko design krn hai acche se thik frr isme login signup ke btn dikhane hai or wk btn add note
-// //
 
 import React from "react";
 import { Link } from "react-router-dom";
+import viewall from "./ViewAll";
 
 const Home = () => {
   return (
@@ -65,6 +46,14 @@ const Home = () => {
             </button>
           </Link>
 
+          <Link to="/viewall">
+  <button className="w-full cursor-pointer py-3 text-lg font-semibold text-white bg-white/20 hover:bg-white/30 backdrop-blur-md 
+    rounded-xl border border-white/40 shadow-lg transition-all duration-300 hover:scale-105">
+    📄 View All Notes
+  </button>
+</Link>
+
+
         </div>
       </div>
     </div>
@@ -72,3 +61,9 @@ const Home = () => {
 };
 
 export default Home;
+
+//craete => seprated page (done)
+//Read => Home page pr hi hota hai 
+//Delete => home page pr hr note ke card me hota hai 
+//updated => seprate page 
+

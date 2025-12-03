@@ -4,6 +4,7 @@ import Login from './Login'
 import Signup from './Signup';
 import AddNote from "./AddNote";
 import Home from "./Home";
+import ViewAll from './ViewAll';
 
 const App = () => {
   return (
@@ -13,6 +14,9 @@ const App = () => {
         <Route path="/signup" element={<Signup />} />
         <Route path='/home' element={<Home />} />
          <Route path="/addnote" element={<AddNote />} />
+          <Route path="/viewall" element={<ViewAll />} />
+        
+        
        
       </Routes>
     </BrowserRouter>
