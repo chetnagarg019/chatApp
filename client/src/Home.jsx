@@ -2,7 +2,7 @@
 
 import React from "react";
 import { Link } from "react-router-dom";
-import viewall from "./ViewAll";
+// import viewall from "./ViewAll";
 
 const Home = () => {
   return (

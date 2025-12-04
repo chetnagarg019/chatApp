@@ -5,6 +5,8 @@ import Signup from './Signup';
 import AddNote from "./AddNote";
 import Home from "./Home";
 import ViewAll from './ViewAll';
+import EditNotes from "./EditNotes";
+
 
 const App = () => {
   return (
@@ -13,8 +15,10 @@ const App = () => {
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path='/home' element={<Home />} />
-         <Route path="/addnote" element={<AddNote />} />
-          <Route path="/viewall" element={<ViewAll />} />
+        <Route path="/addnote" element={<AddNote />} />
+        <Route path="/viewall" element={<ViewAll />} />
+        <Route path="/editnote/:id" element={<EditNotes />} />
+
         
         
        

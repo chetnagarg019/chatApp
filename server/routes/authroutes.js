@@ -1,6 +1,8 @@
 import express from "express";
 import User from "../model/user.js";
 import bcrypt from "bcryptjs";
+import jwt from "jsonwebtoken";
+
 
 const router = express.Router();
 
@@ -23,6 +25,7 @@ router.post("/signup", async (req, res) => {
       email,
       password: hashPassword,
     });
+      await user.save();
 
     res.status(201).json({ message: "signup succesfull", user });
   } catch (err) {
@@ -47,6 +50,8 @@ router.post("/login", async (req, res) => {
     if (!isMatch) {
       return res.status(401).json({ message: "Invalid password" });
     }
+
+
 
     res.status(201).json({
       message: "login succesfull",

@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
+
+
 
 
 export default function Signup() {
@@ -9,6 +12,9 @@ export default function Signup() {
     email: "",
     password: "",
   });
+
+  const navigate = useNavigate();
+
 
   const handleChange = (e) => {
   setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -25,6 +31,7 @@ const handleSubmit = async (e) => {
 
     alert(res.data.message); // Signup successful
     console.log("Signup Response:", res.data);
+      navigate("/home"); // << Redirect from code
 
   } catch (error) {
     alert(error.response?.data?.message || "Signup failed");
@@ -76,16 +83,17 @@ const handleSubmit = async (e) => {
               required
             />
           </div>
-
-          <button
+         
+                    <button
             type="submit"
-            className="w-full bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-xl font-semibold"
+            className="w-full bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-xl font-semibold cursor-pointer"
           >
             Sign Up
           </button>
+
         </form>
 
-        <p className="text-center text-sm mt-4 dark:text-gray-300">
+        <p className="text-center text-sm mt-4 dark:text-gray-300 cursor-pointer">
           Already have an account? <Link to='/login' className="text-blue-600">Login</Link>
         </p>
       </div>
